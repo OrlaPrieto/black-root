@@ -7,7 +7,7 @@ import logo from '../assets/logo.jpg';
   <div class="hero-overlay"></div>
   <div class="container hero-content">
     <div class="hero-text reveal">
-      <h1>Fuerza que nace <br/> <span class="accent">del origen</span></h1>
+      <h1>Fuerza que nace <span class="accent">del origen</span></h1>
       <p>Carbón 100% vegetal para los paladares más exigentes. Calidad artesanal en cada bolsa.</p>
       <div class="hero-actions">
         <a href="#productos" class="btn-primary">Ver Productos</a>
@@ -146,7 +146,13 @@ import logo from '../assets/logo.jpg';
   }
 
   @media (max-width: 480px) {
-    h1 { font-size: 2.8rem; }
+    h1 { 
+      font-size: 2.8rem; 
+      line-height: 1.1;
+      max-width: 15ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
     p { font-size: 1.1rem; }
     .hero-actions {
       flex-direction: column;
