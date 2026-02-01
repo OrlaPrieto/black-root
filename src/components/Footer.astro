@@ -1,0 +1,99 @@
+<footer id="contacto" class="footer">
+  <div class="container footer-grid">
+    <div class="footer-info">
+      <h2>BLACK ROOT</h2>
+      <p>Fuerza que nace del origen.</p>
+      <div class="socials">
+        <!-- Icons placeholders -->
+        <span class="social-icon">FB</span>
+        <span class="social-icon">IG</span>
+      </div>
+    </div>
+    
+    <div class="footer-links">
+      <h3>Acceso Rápido</h3>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#productos">Productos</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-contact">
+      <h3>Contacto</h3>
+      <p>Chihuahua, México</p>
+      <p>ventas@blackroot.com</p>
+      <p>+52 (614) XXX-XXXX</p>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2024 Black Root S.A. de C.V. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: #050505;
+    padding-top: 5rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 4rem;
+    padding-bottom: 5rem;
+  }
+  
+  h2 { 
+    font-size: 2.5rem; 
+    margin-bottom: 1rem;
+    color: var(--accent-red);
+  }
+  
+  h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    color: var(--accent-tan);
+  }
+  
+  .footer-info p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+  }
+  
+  ul { list-style: none; }
+  
+  ul li { margin-bottom: 0.8rem; }
+  
+  ul a {
+    text-decoration: none;
+    color: var(--text-muted);
+    transition: var(--transition-smooth);
+  }
+  
+  ul a:hover { color: white; }
+  
+  .footer-contact p {
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+  }
+  
+  .footer-bottom {
+    padding: 2rem 0;
+    background: black;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #444;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  }
+</style>

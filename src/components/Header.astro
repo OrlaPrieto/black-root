@@ -1,0 +1,90 @@
+---
+const navItems = [
+  { name: 'Inicio', href: '#inicio' },
+  { name: 'Nosotros', href: '#nosotros' },
+  { name: 'Productos', href: '#productos' },
+  { name: 'Contacto', href: '#contacto' },
+];
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.jpg';
+---
+
+<header class="glass fixed-header">
+  <div class="container nav-content">
+    <a href="#inicio" class="logo">
+      <Image src={logo} alt="Black Root Logo" width={60} height={60} />
+      <span>BLACK ROOT</span>
+    </a>
+    
+    <nav>
+      <ul>
+        {navItems.map(item => (
+          <li><a href={item.href}>{item.name}</a></li>
+        ))}
+      </ul>
+    </nav>
+    
+    <a href="#contacto" class="btn-primary desktop-only">Comprar Ahora</a>
+  </div>
+</header>
+
+<style>
+  .fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 0;
+  }
+  
+  .nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: white;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    transition: var(--transition-smooth);
+  }
+
+  .logo img {
+    border-radius: 50%;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    transition: var(--transition-smooth);
+  }
+  
+  nav a:hover {
+    color: var(--accent-tan);
+  }
+  
+  @media (max-width: 768px) {
+    .desktop-only {
+      display: none;
+    }
+    nav {
+      display: none; /* Simplification for now */
+    }
+  }
+</style>

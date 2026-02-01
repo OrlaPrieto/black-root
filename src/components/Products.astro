@@ -1,0 +1,148 @@
+---
+const products = [
+  { 
+    name: "Carbón Vegetal Premium", 
+    weight: "3kg / 5kg / 10kg",
+    description: "Nuestra mezcla insignia. Mayor duración y menor residuo.",
+    price: "Consulte Precio" 
+  },
+  { 
+    name: "Leña de Encino", 
+    weight: "Bulto Estándar",
+    description: "Ideal para ahumados y fragancia intensa.",
+    price: "Consulte Precio" 
+  },
+  { 
+    name: "Kit Parrillero", 
+    weight: "Completo",
+    description: "Carbón + Iniciadores + Guía de encendido.",
+    price: "Consulte Precio" 
+  }
+];
+---
+
+<section id="productos" class="products">
+  <div class="container text-center">
+    <div class="section-header reveal">
+      <h2>Productos <span class="accent">Black Root</span></h2>
+      <p class="section-desc">Selección premium para los maestros del fuego.</p>
+    </div>
+    
+    <div class="products-grid">
+      {products.map(p => (
+        <div class="product-card reveal">
+          <div class="product-info">
+            <h3>{p.name}</h3>
+            <span class="weight">{p.weight}</span>
+            <p>{p.description}</p>
+            <div class="price">{p.price}</div>
+            <a href="#contacto" class="btn-product">Pedir por WhatsApp</a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .products {
+    background: var(--bg-dark);
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .section-header {
+    margin-bottom: 5rem;
+  }
+  
+  h2 { font-size: 3.5rem; }
+  .accent { color: var(--accent-red); }
+  
+  .section-desc {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+  }
+  
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .product-card {
+    background: var(--bg-card);
+    padding: 3rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--accent-red);
+    opacity: 0;
+    transition: var(--transition-smooth);
+  }
+  
+  .product-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(211, 47, 47, 0.3);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  }
+  
+  .product-card:hover::before {
+    opacity: 1;
+  }
+  
+  h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: white;
+  }
+  
+  .weight {
+    display: block;
+    color: var(--accent-tan);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+  }
+  
+  p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+  }
+  
+  .price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+  
+  .btn-product {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+  }
+  
+  .btn-product:hover {
+    background: white;
+    color: black;
+  }
+</style>
