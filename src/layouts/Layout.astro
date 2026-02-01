@@ -6,6 +6,7 @@ interface Props {
 
 const { title, description = "Black Root - Carbón 100% vegetal de alta calidad. Fuerza que nace del origen." } = Astro.props;
 import '../styles/global.css';
+import FireEffects from '../components/FireEffects.astro';
 ---
 
 <!doctype html>
@@ -24,6 +25,7 @@ import '../styles/global.css';
 		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 	</head>
 	<body>
+		<FireEffects />
 		<slot />
 		
 		<script>

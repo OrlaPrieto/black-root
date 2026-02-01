@@ -1,0 +1,160 @@
+---
+import { Image } from 'astro:assets';
+import burningCharcoal from '../assets/burning_charcoal.png';
+---
+
+<section id="experiencia" class="experience">
+  <div class="container">
+    <div class="experience-content">
+      <div class="experience-text reveal">
+        <span class="subtitle">Poder y Calor</span>
+        <h2>La <span class="accent">Experiencia</span> Black Root</h2>
+        <p>Nuestro carbón no solo enciende, transforma. Con una combustión limpia y un calor constante y vigoroso, cada brasa es una promesa de perfección para tu parrilla. Siente el poder del fuego en su estado más puro.</p>
+        
+        <div class="stats">
+          <div class="stat-item">
+            <span class="number">100%</span>
+            <span class="label">Natural</span>
+          </div>
+          <div class="stat-item">
+            <span class="number">+2h</span>
+            <span class="label">Calor constante</span>
+          </div>
+          <div class="stat-item">
+            <span class="number">Min</span>
+            <span class="label">Ceniza</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="experience-image reveal">
+        <div class="image-wrapper">
+          <Image src={burningCharcoal} alt="Carbón Black Root en llamas" width={800} />
+          <div class="glow-overlay"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience {
+    background: #050505;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .experience-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  
+  .subtitle {
+    color: var(--accent-red);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+  h2 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.1;
+  }
+  
+  .accent {
+    color: var(--accent-tan);
+  }
+  
+  p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+    max-width: 600px;
+  }
+  
+  .stats {
+    display: flex;
+    gap: 3rem;
+  }
+  
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: white;
+    line-height: 1;
+  }
+  
+  .label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--accent-tan);
+    letter-spacing: 0.1em;
+  }
+  
+  .image-wrapper {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  }
+  
+  .image-wrapper img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+  }
+  
+  .image-wrapper:hover img {
+    transform: scale(1.05);
+  }
+  
+  .glow-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(211, 47, 47, 0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  
+  @media (max-width: 968px) {
+    .experience-content {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 3rem;
+    }
+    
+    .experience-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    h2 { font-size: 2.8rem; }
+    
+    .stats {
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    h2 { font-size: 2.2rem; }
+    p { font-size: 1rem; }
+    .number { font-size: 2rem; }
+  }
+</style>

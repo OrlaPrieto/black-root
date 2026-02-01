@@ -6,14 +6,13 @@ const navItems = [
   { name: 'Contacto', href: '#contacto' },
 ];
 import { Image } from 'astro:assets';
-import logo from '../assets/logo.jpg';
+import logo from '../assets/logo_header.png';
 ---
 
 <header class="glass fixed-header">
   <div class="container nav-content">
     <a href="#inicio" class="logo">
-      <Image src={logo} alt="Black Root Logo" width={60} height={60} />
-      <span>BLACK ROOT</span>
+      <Image src={logo} alt="Black Root Logo" width={140} height={70} />
     </a>
     
     <nav>
@@ -74,17 +73,14 @@ import logo from '../assets/logo.jpg';
   .logo {
     display: flex;
     align-items: center;
-    gap: 1rem;
     text-decoration: none;
-    color: white;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.5rem;
     transition: var(--transition-smooth);
     z-index: 1001;
   }
 
   .logo img {
-    border-radius: 50%;
+    /* border-radius: 50%; */
+    object-fit: contain;
   }
   
   nav ul {

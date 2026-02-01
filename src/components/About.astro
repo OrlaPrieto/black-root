@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import logo from '../assets/logo.jpg';
+import grillGathering from '../assets/grill_gathering.png';
 
 const features = [
   { title: "100% Vegetal", description: "Carbón de origen natural, sin aditivos químicos para un sabor puro." },
@@ -14,7 +14,7 @@ const features = [
   <div class="container grid">
     <div class="about-image reveal">
       <div class="kraft-card">
-        <Image src={logo} alt="Black Root Seal" width={300} />
+        <Image src={grillGathering} alt="Grilling with Black Root Charcoal" width={600} />
       </div>
     </div>
     
@@ -113,17 +113,30 @@ const features = [
       order: 2;
     }
     .features-grid {
-      text-align: left;
+      text-align: center;
+      justify-content: center;
     }
     h2 { font-size: 2.8rem; }
   }
 
   @media (max-width: 480px) {
     .kraft-card {
-      padding: 1.5rem;
+      padding: 2rem 1rem;
+      width: 100%;
+    }
+    .kraft-card img {
+      width: 100% !important;
+      height: auto !important;
+    }
+    .kraft-card::before {
+      top: -10px;
+      right: -10px;
+      bottom: 10px;
+      left: 10px;
     }
     .features-grid {
       grid-template-columns: 1fr;
+      margin-top: 2rem;
     }
     h2 { font-size: 2.2rem; }
   }
