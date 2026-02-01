@@ -145,4 +145,18 @@ const products = [
     background: white;
     color: black;
   }
+  @media (max-width: 768px) {
+    h2 { font-size: 2.8rem; }
+    .section-header { margin-bottom: 3rem; }
+    .products-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    h2 { font-size: 2.2rem; }
+    .product-card {
+      padding: 1.5rem;
+    }
+  }
 </style>

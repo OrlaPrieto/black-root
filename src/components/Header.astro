@@ -24,9 +24,35 @@ import logo from '../assets/logo.jpg';
       </ul>
     </nav>
     
+    <button class="mobile-menu-toggle" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
     <a href="#contacto" class="btn-primary desktop-only">Comprar Ahora</a>
   </div>
 </header>
+
+<script>
+  const toggle = document.querySelector('.mobile-menu-toggle');
+  const nav = document.querySelector('nav');
+  const navLinks = document.querySelectorAll('nav a');
+
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      toggle.classList.toggle('active');
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+        toggle.classList.remove('active');
+      });
+    });
+  }
+</script>
 
 <style>
   .fixed-header {
@@ -42,6 +68,7 @@ import logo from '../assets/logo.jpg';
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
   }
   
   .logo {
@@ -53,6 +80,7 @@ import logo from '../assets/logo.jpg';
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.5rem;
     transition: var(--transition-smooth);
+    z-index: 1001;
   }
 
   .logo img {
@@ -78,13 +106,69 @@ import logo from '../assets/logo.jpg';
   nav a:hover {
     color: var(--accent-tan);
   }
+
+  .mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+  }
+
+  .mobile-menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    transition: var(--transition-smooth);
+  }
+
+  .mobile-menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .mobile-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
   
   @media (max-width: 768px) {
     .desktop-only {
       display: none;
     }
+    
+    .mobile-menu-toggle {
+      display: flex;
+    }
+
     nav {
-      display: none; /* Simplification for now */
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 70%;
+      height: 100vh;
+      background: var(--bg-card);
+      padding: 100px 2rem 2rem;
+      transition: var(--transition-smooth);
+      box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+    }
+
+    nav.active {
+      right: 0;
+    }
+
+    nav ul {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    nav a {
+      font-size: 1.2rem;
+      color: white;
     }
   }
 </style>

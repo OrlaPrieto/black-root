@@ -16,6 +16,12 @@
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 4rem 1.5rem;
+  }
+}
+
 @font-face {
   font-family: 'Bebas Neue';
   src: url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');

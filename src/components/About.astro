@@ -107,6 +107,7 @@ const features = [
     .grid {
       grid-template-columns: 1fr;
       text-align: center;
+      gap: 3rem;
     }
     .about-image {
       order: 2;
@@ -114,5 +115,16 @@ const features = [
     .features-grid {
       text-align: left;
     }
+    h2 { font-size: 2.8rem; }
+  }
+
+  @media (max-width: 480px) {
+    .kraft-card {
+      padding: 1.5rem;
+    }
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+    h2 { font-size: 2.2rem; }
   }
 </style>
